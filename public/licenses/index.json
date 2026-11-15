@@ -1,0 +1,138 @@
+[
+  {
+    "name": "cpython",
+    "project": "CPython",
+    "version": "3.14.2",
+    "license": "PSF-2.0",
+    "home": "https://www.python.org",
+    "file": "cpython.txt"
+  },
+  {
+    "name": "joblib",
+    "project": "joblib",
+    "version": "1.5.3",
+    "license": "BSD-3-Clause",
+    "home": "https://joblib.readthedocs.io",
+    "file": "joblib.txt"
+  },
+  {
+    "name": "numpy",
+    "project": "NumPy",
+    "version": "2.4.6",
+    "license": "BSD-3-Clause",
+    "home": "https://numpy.org",
+    "file": "numpy.txt"
+  },
+  {
+    "name": "packaging",
+    "project": "packaging",
+    "version": "26.1",
+    "license": "Apache-2.0 OR BSD-2-Clause",
+    "home": "https://github.com/pypa/packaging",
+    "file": "packaging.txt"
+  },
+  {
+    "name": "pandas",
+    "project": "pandas",
+    "version": "3.0.2",
+    "license": "BSD-3-Clause",
+    "home": "https://pandas.pydata.org",
+    "file": "pandas.txt"
+  },
+  {
+    "name": "patsy",
+    "project": "patsy",
+    "version": "1.0.2",
+    "license": "BSD-2-Clause",
+    "home": "https://github.com/pydata/patsy",
+    "file": "patsy.txt"
+  },
+  {
+    "name": "pyodide",
+    "project": "Pyodide",
+    "version": "314.0.8",
+    "license": "MPL-2.0",
+    "home": "https://pyodide.org",
+    "file": "pyodide.txt"
+  },
+  {
+    "name": "pyparsing",
+    "project": "pyparsing",
+    "version": "3.3.2",
+    "license": "MIT",
+    "home": "https://github.com/pyparsing/pyparsing",
+    "file": "pyparsing.txt"
+  },
+  {
+    "name": "python-dateutil",
+    "project": "python-dateutil",
+    "version": "2.9.0.post0",
+    "license": "Apache-2.0 OR BSD-3-Clause",
+    "home": "https://github.com/dateutil/dateutil",
+    "file": "python-dateutil.txt"
+  },
+  {
+    "name": "pytz",
+    "project": "pytz",
+    "version": "2026.1.post1",
+    "license": "MIT",
+    "home": "https://pythonhosted.org/pytz/",
+    "file": "pytz.txt"
+  },
+  {
+    "name": "scikit-learn",
+    "project": "scikit-learn",
+    "version": "1.8.0",
+    "license": "BSD-3-Clause",
+    "home": "https://scikit-learn.org",
+    "file": "scikit-learn.txt"
+  },
+  {
+    "name": "scipy",
+    "project": "SciPy",
+    "version": "1.18.0",
+    "license": "BSD-3-Clause",
+    "home": "https://scipy.org",
+    "file": "scipy.txt"
+  },
+  {
+    "name": "setuptools",
+    "project": "setuptools",
+    "version": "82.0.1",
+    "license": "MIT",
+    "home": "https://github.com/pypa/setuptools",
+    "file": "setuptools.txt"
+  },
+  {
+    "name": "six",
+    "project": "six",
+    "version": "1.17.0",
+    "license": "MIT",
+    "home": "https://github.com/benjaminp/six",
+    "file": "six.txt"
+  },
+  {
+    "name": "statsmodels",
+    "project": "statsmodels",
+    "version": "0.14.6",
+    "license": "BSD-3-Clause",
+    "home": "https://www.statsmodels.org",
+    "file": "statsmodels.txt"
+  },
+  {
+    "name": "threadpoolctl",
+    "project": "threadpoolctl",
+    "version": "3.6.0",
+    "license": "BSD-3-Clause",
+    "home": "https://github.com/joblib/threadpoolctl",
+    "file": "threadpoolctl.txt"
+  },
+  {
+    "name": "xgboost",
+    "project": "XGBoost",
+    "version": "2.1.4",
+    "license": "Apache-2.0",
+    "home": "https://xgboost.ai",
+    "file": "xgboost.txt"
+  }
+]

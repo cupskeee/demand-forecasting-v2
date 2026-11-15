@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Engine proof</title>
+<style>body{font:14px/1.5 ui-monospace,monospace;margin:2rem;max-width:60rem}pre{white-space:pre-wrap}</style>
+<h1>Engine proof: four models fitted in a Web Worker</h1>
+<p>Loads Pyodide with numpy, pandas, scikit-learn, statsmodels and xgboost from this site,
+fits the four models on a small monthly dataset and reports timings.</p>
+<pre id="log">starting…</pre>
+<script type="module">
+const log = document.getElementById('log');
+const t0 = performance.now();
+const worker = new Worker('./worker.mjs', { type: 'module' });
+const lines = [];
+worker.onmessage = (e) => {
+  if (e.data.type === 'log') { lines.push(e.data.text); log.textContent = lines.join('\n'); }
+  if (e.data.type === 'done') {
+    const result = { ...e.data.result, totalMs: Math.round(performance.now() - t0) };
+    window.__result = result;
+    lines.push('', JSON.stringify(result, null, 2));
+    log.textContent = lines.join('\n');
+  }
+  if (e.data.type === 'error') { window.__result = { error: e.data.text }; log.textContent += '\nERROR ' + e.data.text; }
+};
+worker.onerror = (e) => { window.__result = { error: e.message }; log.textContent += '\nERROR ' + e.message; };
+</script>
+</html>

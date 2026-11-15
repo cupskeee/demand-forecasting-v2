@@ -1,0 +1,329 @@
+{
+  "engine": "Rama's ML Engine",
+  "builtOn": "Pyodide, scikit-learn, statsmodels, XGBoost, pandas and NumPy",
+  "pyodideVersion": "314.0.8",
+  "pythonVersion": "3.14.2",
+  "upstream": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/",
+  "rebuiltBy": "tools/build-engine.mjs",
+  "totalBytes": 50061676,
+  "files": [
+    {
+      "path": "pyodide.mjs",
+      "size": 17758,
+      "sha256": "1bb8cc14f9405aaa7cd4e00c12edd0a8539de9cc026618d6ee5a9663f367dc70",
+      "project": "Pyodide",
+      "version": "314.0.8",
+      "license": "MPL-2.0",
+      "upstream": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/pyodide.mjs"
+    },
+    {
+      "path": "pyodide.asm.mjs",
+      "size": 1250259,
+      "sha256": "22514b8be6980e28a02c8b1d6387ce8dfe666fc4edf8d547cff5dce29ff4d972",
+      "project": "Pyodide",
+      "version": "314.0.8",
+      "license": "MPL-2.0",
+      "upstream": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/pyodide.asm.mjs"
+    },
+    {
+      "path": "pyodide.asm.wasm",
+      "size": 9597892,
+      "sha256": "e14d49ceca9b4a0e274ea918f3a898de2d3880b6e5573a6cfe1a2267ecc70329",
+      "project": "Pyodide (includes the CPython interpreter)",
+      "version": "314.0.8",
+      "license": "MPL-2.0 AND PSF-2.0",
+      "upstream": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/pyodide.asm.wasm"
+    },
+    {
+      "path": "python_stdlib.zip",
+      "size": 2545550,
+      "sha256": "2bd3394a145bfbbe5bbc9d9d6ab9136abbb986c6fef6c142b3a2962227aa5c28",
+      "project": "CPython standard library",
+      "version": "3.14.2",
+      "license": "PSF-2.0",
+      "upstream": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/python_stdlib.zip"
+    },
+    {
+      "path": "pyodide-lock.json",
+      "size": 119077,
+      "sha256": "5dc2fc119108bc148c7457dc86e7675b5c87e1cafd420b9c34c1eaef7b36c010",
+      "project": "Pyodide",
+      "version": "314.0.8",
+      "license": "MPL-2.0",
+      "upstream": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/pyodide-lock.json"
+    },
+    {
+      "path": "joblib-1.5.3-py3-none-any.whl",
+      "size": 180317,
+      "sha256": "fb2860ff70d0b6b43a3df5e3ce52d3a938ad2fcacd80a3f2f3f37e930843e607",
+      "project": "joblib",
+      "version": "1.5.3",
+      "license": "BSD-3-Clause",
+      "upstream": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/joblib-1.5.3-py3-none-any.whl"
+    },
+    {
+      "path": "numpy-2.4.6-cp314-cp314-pyemscripten_2026_0_wasm32.whl",
+      "size": 2960568,
+      "sha256": "a292c1f5d7d8a2208cd5e94fc467604c131cabcd2fc14fed6eefde121e7fabdf",
+      "project": "NumPy",
+      "version": "2.4.6",
+      "license": "BSD-3-Clause",
+      "upstream": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/numpy-2.4.6-cp314-cp314-pyemscripten_2026_0_wasm32.whl"
+    },
+    {
+      "path": "packaging-26.1-py3-none-any.whl",
+      "size": 95852,
+      "sha256": "565acbbea54da30348b6d68b6a54373e6f777987db9f1db6966b4b3a5060d303",
+      "project": "packaging",
+      "version": "26.1",
+      "license": "Apache-2.0 OR BSD-2-Clause",
+      "upstream": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/packaging-26.1-py3-none-any.whl"
+    },
+    {
+      "path": "pandas-3.0.2-cp314-cp314-pyemscripten_2026_0_wasm32.whl",
+      "size": 4177749,
+      "sha256": "45ff57772cc2f366a8582c7d3097cc4e6676342ecd5a3c08184a43462d5a02ae",
+      "project": "pandas",
+      "version": "3.0.2",
+      "license": "BSD-3-Clause",
+      "upstream": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/pandas-3.0.2-cp314-cp314-pyemscripten_2026_0_wasm32.whl"
+    },
+    {
+      "path": "patsy-1.0.2-py2.py3-none-any.whl",
+      "size": 121050,
+      "sha256": "64e931013dc7c23d2661327531b04c4370605cd439cdee4bb1a55846c5f41771",
+      "project": "patsy",
+      "version": "1.0.2",
+      "license": "BSD-2-Clause",
+      "upstream": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/patsy-1.0.2-py2.py3-none-any.whl"
+    },
+    {
+      "path": "pyparsing-3.3.2-py3-none-any.whl",
+      "size": 122781,
+      "sha256": "f0dd8225b5f8e945980b400bd465b4b90cb0498a2eede0d9dbea98372f6110c5",
+      "project": "pyparsing",
+      "version": "3.3.2",
+      "license": "MIT",
+      "upstream": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/pyparsing-3.3.2-py3-none-any.whl"
+    },
+    {
+      "path": "python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+      "size": 229892,
+      "sha256": "9b13365edf9c188f570baf9c540bbb3029ada2a2dacb9694b3659941693ee9e5",
+      "project": "python-dateutil",
+      "version": "2.9.0.post0",
+      "license": "Apache-2.0 OR BSD-3-Clause",
+      "upstream": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/python_dateutil-2.9.0.post0-py2.py3-none-any.whl"
+    },
+    {
+      "path": "pytz-2026.1.post1-py2.py3-none-any.whl",
+      "size": 510489,
+      "sha256": "b8249d6450146e0b61e6d710dc02ebb35a904796c4c2f97fe87d4ac5872db36a",
+      "project": "pytz",
+      "version": "2026.1.post1",
+      "license": "MIT",
+      "upstream": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/pytz-2026.1.post1-py2.py3-none-any.whl"
+    },
+    {
+      "path": "scikit_learn-1.8.0-cp314-cp314-pyemscripten_2026_0_wasm32.whl",
+      "size": 4449204,
+      "sha256": "432f560f54c5283d13e9d7c11dddc8bdf2f15aec326cc1d7314f600786154181",
+      "project": "scikit-learn",
+      "version": "1.8.0",
+      "license": "BSD-3-Clause",
+      "upstream": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/scikit_learn-1.8.0-cp314-cp314-pyemscripten_2026_0_wasm32.whl"
+    },
+    {
+      "path": "scipy-1.18.0-cp314-cp314-pyemscripten_2026_0_wasm32.whl",
+      "size": 14029750,
+      "sha256": "17ee329a957863516d1bb6a6aaa0c60576fac027e9cd3d43de27f58b5b599b50",
+      "project": "SciPy",
+      "version": "1.18.0",
+      "license": "BSD-3-Clause",
+      "upstream": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/scipy-1.18.0-cp314-cp314-pyemscripten_2026_0_wasm32.whl"
+    },
+    {
+      "path": "setuptools-82.0.1-py3-none-any.whl",
+      "size": 756856,
+      "sha256": "f411555185daefde67e99bec050782a5390ea62270ac6cddc2dab7bea70e53b1",
+      "project": "setuptools",
+      "version": "82.0.1",
+      "license": "MIT",
+      "upstream": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/setuptools-82.0.1-py3-none-any.whl"
+    },
+    {
+      "path": "six-1.17.0-py2.py3-none-any.whl",
+      "size": 11050,
+      "sha256": "228c50f73aa7addf2c2ccf2979c256802a59ab69cad8152b31b9443cc8140f42",
+      "project": "six",
+      "version": "1.17.0",
+      "license": "MIT",
+      "upstream": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/six-1.17.0-py2.py3-none-any.whl"
+    },
+    {
+      "path": "statsmodels-0.14.6-cp314-cp314-pyemscripten_2026_0_wasm32.whl",
+      "size": 8162663,
+      "sha256": "8ee50091810f8ac540a4b94eeba777028cfe8200a78bc5367ea01ad2d6a3a951",
+      "project": "statsmodels",
+      "version": "0.14.6",
+      "license": "BSD-3-Clause",
+      "upstream": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/statsmodels-0.14.6-cp314-cp314-pyemscripten_2026_0_wasm32.whl"
+    },
+    {
+      "path": "threadpoolctl-3.6.0-py3-none-any.whl",
+      "size": 18638,
+      "sha256": "3521783ffb6bf212e03fb67ec1955af206d6ba7ea09ac21f200875077bbbe7c2",
+      "project": "threadpoolctl",
+      "version": "3.6.0",
+      "license": "BSD-3-Clause",
+      "upstream": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/threadpoolctl-3.6.0-py3-none-any.whl"
+    },
+    {
+      "path": "xgboost-2.1.4-py3-none-pyemscripten_2026_0_wasm32.whl",
+      "size": 704281,
+      "sha256": "17755190dc2ad732878a98c3d7b1817fb62fabdc29d484db55b6a2fae7292848",
+      "project": "XGBoost",
+      "version": "2.1.4",
+      "license": "Apache-2.0",
+      "upstream": "https://cdn.jsdelivr.net/pyodide/v314.0.8/full/xgboost-2.1.4-py3-none-pyemscripten_2026_0_wasm32.whl"
+    }
+  ],
+  "licenses": [
+    {
+      "name": "cpython",
+      "project": "CPython",
+      "version": "3.14.2",
+      "license": "PSF-2.0",
+      "home": "https://www.python.org",
+      "file": "cpython.txt"
+    },
+    {
+      "name": "joblib",
+      "project": "joblib",
+      "version": "1.5.3",
+      "license": "BSD-3-Clause",
+      "home": "https://joblib.readthedocs.io",
+      "file": "joblib.txt"
+    },
+    {
+      "name": "numpy",
+      "project": "NumPy",
+      "version": "2.4.6",
+      "license": "BSD-3-Clause",
+      "home": "https://numpy.org",
+      "file": "numpy.txt"
+    },
+    {
+      "name": "packaging",
+      "project": "packaging",
+      "version": "26.1",
+      "license": "Apache-2.0 OR BSD-2-Clause",
+      "home": "https://github.com/pypa/packaging",
+      "file": "packaging.txt"
+    },
+    {
+      "name": "pandas",
+      "project": "pandas",
+      "version": "3.0.2",
+      "license": "BSD-3-Clause",
+      "home": "https://pandas.pydata.org",
+      "file": "pandas.txt"
+    },
+    {
+      "name": "patsy",
+      "project": "patsy",
+      "version": "1.0.2",
+      "license": "BSD-2-Clause",
+      "home": "https://github.com/pydata/patsy",
+      "file": "patsy.txt"
+    },
+    {
+      "name": "pyodide",
+      "project": "Pyodide",
+      "version": "314.0.8",
+      "license": "MPL-2.0",
+      "home": "https://pyodide.org",
+      "file": "pyodide.txt"
+    },
+    {
+      "name": "pyparsing",
+      "project": "pyparsing",
+      "version": "3.3.2",
+      "license": "MIT",
+      "home": "https://github.com/pyparsing/pyparsing",
+      "file": "pyparsing.txt"
+    },
+    {
+      "name": "python-dateutil",
+      "project": "python-dateutil",
+      "version": "2.9.0.post0",
+      "license": "Apache-2.0 OR BSD-3-Clause",
+      "home": "https://github.com/dateutil/dateutil",
+      "file": "python-dateutil.txt"
+    },
+    {
+      "name": "pytz",
+      "project": "pytz",
+      "version": "2026.1.post1",
+      "license": "MIT",
+      "home": "https://pythonhosted.org/pytz/",
+      "file": "pytz.txt"
+    },
+    {
+      "name": "scikit-learn",
+      "project": "scikit-learn",
+      "version": "1.8.0",
+      "license": "BSD-3-Clause",
+      "home": "https://scikit-learn.org",
+      "file": "scikit-learn.txt"
+    },
+    {
+      "name": "scipy",
+      "project": "SciPy",
+      "version": "1.18.0",
+      "license": "BSD-3-Clause",
+      "home": "https://scipy.org",
+      "file": "scipy.txt"
+    },
+    {
+      "name": "setuptools",
+      "project": "setuptools",
+      "version": "82.0.1",
+      "license": "MIT",
+      "home": "https://github.com/pypa/setuptools",
+      "file": "setuptools.txt"
+    },
+    {
+      "name": "six",
+      "project": "six",
+      "version": "1.17.0",
+      "license": "MIT",
+      "home": "https://github.com/benjaminp/six",
+      "file": "six.txt"
+    },
+    {
+      "name": "statsmodels",
+      "project": "statsmodels",
+      "version": "0.14.6",
+      "license": "BSD-3-Clause",
+      "home": "https://www.statsmodels.org",
+      "file": "statsmodels.txt"
+    },
+    {
+      "name": "threadpoolctl",
+      "project": "threadpoolctl",
+      "version": "3.6.0",
+      "license": "BSD-3-Clause",
+      "home": "https://github.com/joblib/threadpoolctl",
+      "file": "threadpoolctl.txt"
+    },
+    {
+      "name": "xgboost",
+      "project": "XGBoost",
+      "version": "2.1.4",
+      "license": "Apache-2.0",
+      "home": "https://xgboost.ai",
+      "file": "xgboost.txt"
+    }
+  ]
+}

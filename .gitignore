@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.wrangler/
+.playwright-mcp/
+.DS_Store
+*.log
+
+# The engine files are rebuilt from upstream by tools/build-engine.mjs.
+# Only the manifest that describes them is kept in the repository.
+public/engine/*
+!public/engine/manifest.json
+
+# Private planning notes, not part of the published project.
+SPEC.md
