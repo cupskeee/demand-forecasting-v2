@@ -1,0 +1,22 @@
+{
+  "name": "demand-forecasting-v2",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Local-first demand forecasting: four models fitted in the browser on WebAssembly.",
+  "scripts": {
+    "dev": "vite",
+    "engine": "node tools/build-engine.mjs",
+    "engine:check": "node tools/build-engine.mjs --check",
+    "examples": "uv run tools/generate_examples.py",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run engine && npm run engine:check && tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.10.6",
+    "preact": "^11.2.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8"
+  }
+}

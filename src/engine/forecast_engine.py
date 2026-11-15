@@ -530,3 +530,36 @@ def what_if(spec, report):
 def forget(prefix=""):
     for key in [k for k in _fitted if k.startswith(prefix)]:
         del _fitted[key]
+
+
+# ---------------------------------------------------------------- entry points
+
+
+def _finite(values):
+    return values is None or all(math.isfinite(v) for v in values)
+
+
+def run_json(spec_json, report):
+    import json
+
+    result = run_model(json.loads(spec_json), report)
+    if not (_finite(result["forecast"]) and _finite(result["holdout"]["predicted"])):
+        raise RuntimeError("the model produced values that are not numbers")
+    for key in ("lower", "upper"):
+        if not _finite(result[key]):
+            result[key] = result["forecast"]
+    for row in [result["metrics"], *result["folds"]]:
+        for key in ("mae", "rmse", "mape", "r2"):
+            if row[key] is not None and not math.isfinite(row[key]):
+                row[key] = None
+    result["drivers"] = [v if math.isfinite(v) else 0.0 for v in result["drivers"]]
+    return json.dumps(result)
+
+
+def what_if_json(spec_json, report):
+    import json
+
+    result = what_if(json.loads(spec_json), report)
+    if not (_finite(result["baseline"]) and _finite(result["scenario"])):
+        raise RuntimeError("the model produced values that are not numbers")
+    return json.dumps(result)
