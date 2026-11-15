@@ -1,0 +1,131 @@
+[
+  {
+    "id": "clove-cigarettes",
+    "name": "Clove cigarettes, filter 12s",
+    "category": "Tobacco",
+    "description": "Ten years of monthly sales for a fictional clove cigarette pack, with retail price, excise, the festive calendar, outlet coverage and promotion spend.",
+    "quirks": [
+      "Excise rises most Januaries: the trade stocks up in December and buys less in January.",
+      "September 2018 is missing from the file.",
+      "2026 rows carry the planned price, the announced excise and the festive calendar."
+    ],
+    "mapping": {
+      "date": "month",
+      "target": "sales_million_sticks",
+      "factors": [
+        "retail_price_idr",
+        "excise_idr_per_stick",
+        "festive_days",
+        "outlets_thousand",
+        "promo_spend_idr_million"
+      ]
+    },
+    "suggestion": {
+      "label": "Raise the retail price by 5%",
+      "factor": "retail_price_idr",
+      "kind": "percent",
+      "value": 5
+    },
+    "file": "clove-cigarettes.csv",
+    "months": 119,
+    "from": "2016-01",
+    "to": "2025-12"
+  },
+  {
+    "id": "white-cigarettes",
+    "name": "White cigarettes, 20s",
+    "category": "Tobacco",
+    "description": "Nine years of monthly sales for a fictional white cigarette pack in a slowly shrinking segment, with price, excise, the festive calendar, consumer confidence and promotion spend.",
+    "quirks": [
+      "A 26% excise rise in January 2020 pushes the price up sharply.",
+      "Sales and consumer confidence both drop in April to July 2020.",
+      "2026 rows carry the planned price, the announced excise and the festive calendar."
+    ],
+    "mapping": {
+      "date": "month",
+      "target": "sales_million_sticks",
+      "factors": [
+        "retail_price_idr",
+        "excise_idr_per_stick",
+        "festive_days",
+        "consumer_confidence_index",
+        "promo_spend_idr_million"
+      ]
+    },
+    "suggestion": {
+      "label": "Consumer confidence falls 10 points",
+      "factor": "consumer_confidence_index",
+      "kind": "add",
+      "value": -10
+    },
+    "file": "white-cigarettes.csv",
+    "months": 108,
+    "from": "2017-01",
+    "to": "2025-12"
+  },
+  {
+    "id": "instant-noodles",
+    "name": "Instant noodles, fried 85 g",
+    "category": "Food",
+    "description": "Eleven years of monthly sales for a fictional instant noodle pack, with shelf price, promotion depth, the festive calendar, rainfall, wheat cost and school holidays.",
+    "quirks": [
+      "Households stocked up in March 2020: a one-off spike no factor explains.",
+      "July 2022 is missing from the file.",
+      "The festive peak moves from July in 2015 to March in 2025."
+    ],
+    "mapping": {
+      "date": "month",
+      "target": "sales_thousand_cartons",
+      "factors": [
+        "price_idr_per_pack",
+        "promo_depth_pct",
+        "festive_days",
+        "rainfall_mm",
+        "wheat_cost_index",
+        "school_holiday_days"
+      ]
+    },
+    "suggestion": {
+      "label": "Add a 10-point promotion every month",
+      "factor": "promo_depth_pct",
+      "kind": "add",
+      "value": 10
+    },
+    "file": "instant-noodles.csv",
+    "months": 131,
+    "from": "2015-01",
+    "to": "2025-12"
+  },
+  {
+    "id": "bottled-tea",
+    "name": "Bottled jasmine tea, 350 ml",
+    "category": "Beverage",
+    "description": "Eight years of monthly sales for a fictional ready-to-drink tea, with list price, temperature, the festive calendar, promotion spend and the number of outlets with a cooler.",
+    "quirks": [
+      "The fasting month lifts sales by a third, and it moves from May and June in 2018 to March in 2025.",
+      "The list price changed in July 2022 and again in February 2025.",
+      "February 2021 holds the text \"n/a\" instead of a number."
+    ],
+    "mapping": {
+      "date": "month",
+      "target": "sales_thousand_cases",
+      "factors": [
+        "price_idr_per_bottle",
+        "avg_temperature_c",
+        "festive_days",
+        "promo_spend_idr_million",
+        "cooler_outlets_thousand"
+      ]
+    },
+    "suggestion": {
+      "label": "Cut the list price by 5%",
+      "factor": "price_idr_per_bottle",
+      "kind": "percent",
+      "value": -5
+    },
+    "file": "bottled-tea.csv",
+    "months": 96,
+    "from": "2018-01",
+    "to": "2025-12"
+  }
+]
