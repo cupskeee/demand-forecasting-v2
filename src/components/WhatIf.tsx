@@ -262,6 +262,13 @@ export function WhatIf({ run, initialModel }: { run: Run; initialModel: ModelId 
                   </dd>
                 </div>
               </dl>
+              {Math.abs(sum(show.scenario) - sum(show.baseline)) < 1e-9 && (
+                <div class="notice">
+                  <strong>This model's forecast does not move</strong>
+                  As fitted, {modelName(model, true)} found no effect from the factors you changed, so its what-if
+                  equals its baseline. Try another model, or another factor.
+                </div>
+              )}
               <p class="muted small">
                 {modelName(model, true)}
                 {working ? ', recalculating…' : show.refitted ? ', fitted again for this what-if with the same settings.' : '.'}

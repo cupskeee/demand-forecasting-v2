@@ -1,6 +1,6 @@
 // Installing the engine: download each file from this site, check it against the
 // SHA-256 in the manifest, and only then keep it in the browser's cache storage.
-import { settings } from '../lib/db';
+import { deleteAllData, settings } from '../lib/db';
 import { describeDevice, missingFeatures } from '../lib/device';
 import { createStore } from '../lib/store';
 import { startPool, stopPool } from './pool';
@@ -253,7 +253,6 @@ export async function verifyEngine(onProgress?: (done: number) => void): Promise
 /** Removes the engine and every dataset and run from this browser. */
 export async function removeEverything(): Promise<void> {
   stopPool();
-  const { deleteAllData } = await import('../lib/db');
   await deleteAllData();
   for (const name of await caches.keys()) await caches.delete(name);
   settings.clear();

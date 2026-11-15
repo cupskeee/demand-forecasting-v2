@@ -36,6 +36,10 @@ let lastInfo = { versions: {} as Record<string, string>, memoryMB: 0 };
 function spawn(): Slot {
   const worker = new Worker(new URL('./worker.ts', import.meta.url), { type: 'module' });
   const slot: Slot = { worker, ready: false, dead: false, task: null };
+  // A worker that has not come up after two minutes is not going to.
+  setTimeout(() => {
+    if (!slot.ready) died(slot, 'The engine took too long to start on this device. Close other tabs or apps and try again.');
+  }, 120_000);
   worker.onmessage = (event) => {
     const msg = event.data;
     if (msg.type === 'boot') hooks?.onBoot(msg.message);

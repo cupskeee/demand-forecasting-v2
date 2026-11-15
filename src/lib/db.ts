@@ -84,7 +84,6 @@ export async function deleteAllData(): Promise<void> {
     req.onerror = () => reject(req.error);
     req.onblocked = () => resolve();
   });
-  touch();
 }
 
 /** Small settings only; everything else is in IndexedDB. */

@@ -23,6 +23,8 @@ export interface Zone {
   from: number;
   to: number;
   label: string;
+  /** Used when the zone is too narrow for the full label. */
+  short?: string;
 }
 interface Props {
   /** Month number of position 0. */
@@ -136,7 +138,7 @@ export function Chart({ firstMonth, from, to, lines, bands = [], zones = [], hol
             <g key={zone.label}>
               <rect class="zone" x={x(a)} y={pad.top} width={x(b) - x(a)} height={height - pad.top - pad.bottom} />
               <text class="zone-label" x={x(a) + 5} y={pad.top - 7}>
-                {zone.label}
+                {[zone.label, zone.short ?? ''].find((t) => t.length * 6 + 8 <= x(b) - x(a)) ?? ''}
               </text>
             </g>
           );

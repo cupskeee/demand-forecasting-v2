@@ -7,6 +7,7 @@ interface Scope {
   postMessage(message: unknown): void;
   onmessage: ((event: MessageEvent) => void) | null;
   location: Location;
+  addEventListener(type: 'unhandledrejection', listener: (event: PromiseRejectionEvent) => void): void;
 }
 const scope = self as unknown as Scope;
 
@@ -25,6 +26,16 @@ interface Pyodide {
 
 const LIBRARIES = ['numpy', 'pandas', 'scikit-learn', 'statsmodels', 'xgboost'];
 const quiet = { messageCallback: () => undefined };
+
+// The runtime can fail in the background without rejecting the promise we wait on
+// (for example when its WebAssembly file cannot be fetched). Catch that here, so the
+// app can say so instead of waiting for ever.
+let started = false;
+scope.addEventListener('unhandledrejection', (event) => {
+  if (started) return;
+  event.preventDefault();
+  scope.postMessage({ type: 'fatal', message: explain(event.reason) });
+});
 
 const booted: Promise<{ pyodide: Pyodide; api: PyProxy } | null> = (async () => {
   try {
@@ -47,6 +58,7 @@ import statsmodels.tsa.statespace.sarimax, statsmodels.tsa.holtwinters, sklearn.
       )
       .toJs({ dict_converter: Object.fromEntries }) as Record<string, string>;
     const api = pyodide.pyimport('forecast_engine') as PyProxy;
+    started = true;
     scope.postMessage({
       type: 'ready',
       versions,
@@ -64,8 +76,8 @@ function explain(err: unknown): string {
   if (/memory|allocation|out of bounds/i.test(text)) {
     return 'This device does not have enough free memory to start the engine. Close other tabs or apps and try again.';
   }
-  if (/fetch|network|load/i.test(text)) {
-    return `An engine file could not be loaded (${text.split('\n')[0]}).`;
+  if (/fetch|network|load|import/i.test(text)) {
+    return 'An engine file could not be loaded. If the network is off, the copy saved in this browser is incomplete: reconnect and restart the engine, or remove it and install it again.';
   }
   return text.split('\n').slice(-2).join(' ').trim() || 'The engine could not start.';
 }

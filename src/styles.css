@@ -259,6 +259,11 @@ th.n {
 .stack {
   display: grid;
   gap: 0.9rem;
+  grid-template-columns: minmax(0, 1fr);
+}
+.split > *,
+.stack > * {
+  min-width: 0;
 }
 .row {
   display: flex;

@@ -213,7 +213,7 @@ function Results({ run }: { run: Run }) {
   if (result) {
     const color = MODELS[selected].color;
     const held = result.holdout;
-    zones.push({ from: held.start, to: n - 1, label: 'Held back for testing' });
+    zones.push({ from: held.start, to: n - 1, label: 'Held back for testing', short: 'Test' });
     lines.push(
       { id: 'backtest', label: 'Predicted when held back', color, points: place(total, held.start, held.predicted), dash: true },
       { id: 'forecast', label: `${MODELS[selected].name} forecast`, color, points: place(total, n, result.forecast), width: 2.4 },
