@@ -40,7 +40,8 @@ self.addEventListener('fetch', (event) => {
 
   if (request.mode === 'navigate') {
     event.respondWith(
-      caches.match('/index.html').then((hit) => hit || fetch(request)),
+      // A redirected copy cannot be used to open a page, so never answer with one.
+      caches.match('/').then((hit) => (hit && !hit.redirected ? hit : fetch(request))),
     );
     return;
   }

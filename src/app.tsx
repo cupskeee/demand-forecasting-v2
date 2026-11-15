@@ -52,6 +52,10 @@ export function App() {
           </div>
         )}
         {page}
+        <footer class="site-foot">
+          Back to <a href="https://yusuframadhan.com">yusuframadhan.com</a> or{" "}
+          <a href="https://yusuframadhan.dev">yusuframadhan.dev</a>
+        </footer>
       </main>
     </div>
   );

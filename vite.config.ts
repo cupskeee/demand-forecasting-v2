@@ -44,7 +44,12 @@ function offlineShell(): Plugin {
       for (const f of shell) hash.update(f).update(readFileSync(join(dist, f)));
       const sw = readFileSync(join(dist, 'sw.js'), 'utf8')
         .replace("'dev'", JSON.stringify(hash.digest('hex').slice(0, 12)))
-        .replace('[/* filled in by the build */]', JSON.stringify(shell));
+        .replace(
+          '[/* filled in by the build */]',
+          // The page is cached as "/", not "/index.html": the host redirects the latter, and a
+          // browser refuses to open a page from a redirected cached response.
+          JSON.stringify(shell.map((f) => (f === '/index.html' ? '/' : f))),
+        );
       writeFileSync(join(dist, 'sw.js'), sw);
     },
   };

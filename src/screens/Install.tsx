@@ -48,7 +48,8 @@ export function Install() {
           </li>
         </ol>
         <p class="who">
-          A portfolio project by <a href="https://yusuframadhan.com">Yusuf Ramadhan</a>.
+          A portfolio project by Yusuf Ramadhan. Back to <a href="https://yusuframadhan.com">yusuframadhan.com</a> or{" "}
+          <a href="https://yusuframadhan.dev">yusuframadhan.dev</a>.
         </p>
       </section>
 

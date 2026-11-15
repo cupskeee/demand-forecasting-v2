@@ -226,6 +226,13 @@ th.n {
   max-width: 1180px;
   width: 100%;
 }
+.site-foot {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.87rem;
+}
 .page-head {
   display: grid;
   gap: 0.5rem;
