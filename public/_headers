@@ -31,3 +31,7 @@
   Cache-Control: no-cache
 /engine/manifest.json
   Cache-Control: no-cache
+
+# Search engines still read the sitemap, but should not list it as a result.
+/sitemap.xml
+  X-Robots-Tag: noindex
