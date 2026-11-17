@@ -9,5 +9,7 @@ if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js').catch(() => undefined);
 }
 
-render(<App />, document.getElementById('app')!);
+const root = document.getElementById('app')!;
+root.textContent = ''; // clear the loading heading written in index.html
+render(<App />, root);
 initEngine();
