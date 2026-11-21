@@ -18,10 +18,65 @@
     <title>Demand Forecasting v2: forecasting that runs in your browser</title>
   </head>
   <body>
-    <!-- Shown until the app starts; every screen of the app has its own heading. -->
+    <!-- Shown until the app starts, and what a reader without JavaScript gets; every screen of
+         the app has its own heading. Styled by the "before the app starts" part of styles.css. -->
     <div id="app">
-      <h1>Demand Forecasting v2</h1>
-      <p>Loading the app…</p>
+      <div class="pre">
+        <div class="pre-pitch">
+          <p class="pre-kicker">Runs on your own device</p>
+          <h1>Demand Forecasting v2</h1>
+          <p>
+            A demand forecasting app that runs entirely on your own device. Add monthly sales as a CSV
+            file, or open one of four built-in examples, and four models are fitted in your browser:
+            XGBoost, SARIMAX, Elastic Net and Holt-Winters.
+          </p>
+          <p class="pre-wait"><span class="dot busy"></span>Loading the app…</p>
+        </div>
+        <div class="pre-detail">
+          <div class="pre-chart">
+            <svg viewBox="0 0 560 220" aria-hidden="true">
+              <path class="pre-grid" d="M20 40H540M20 90H540M20 140H540M20 190H540" />
+              <path class="pre-now" d="M340 14V204" />
+              <text class="pre-axis" x="330" y="24" text-anchor="end">history</text>
+              <text class="pre-axis" x="350" y="24">forecast</text>
+              <polygon class="pre-band" points="340,62 360,72 380,46 400,36 420,58 440,32 460,22 480,46 500,22 520,12 540,34 540,82 520,58 500,64 480,86 460,60 440,66 420,90 400,66 380,72 360,96" />
+              <polyline class="pre-hist" points="20,150 40,138 60,160 80,128 100,118 120,140 140,112 160,100 180,124 200,96 220,88 240,110 260,84 280,72 300,98 320,70 340,62" />
+              <polyline class="pre-fc sarimax" points="340,62 360,88 380,64 400,58 420,82 440,58 460,52 480,78 500,56 520,50 540,74" />
+              <polyline class="pre-fc holtwinters" points="340,62 360,86 380,62 400,54 420,78 440,54 460,46 480,72 500,50 520,42 540,66" />
+              <polyline class="pre-fc xgboost" points="340,62 360,84 380,58 400,50 420,74 440,48 460,40 480,66 500,42 520,34 540,58" />
+              <polyline class="pre-fc elasticnet" points="340,62 360,80 380,54 400,44 420,66 440,40 460,30 480,54 500,30 520,20 540,42" />
+            </svg>
+            <ul class="pre-legend">
+              <li class="xgboost">XGBoost</li>
+              <li class="sarimax">SARIMAX</li>
+              <li class="elasticnet">Elastic Net</li>
+              <li class="holtwinters">Holt-Winters</li>
+            </ul>
+          </div>
+          <div class="pre-cols">
+            <div>
+              <h2>What you get</h2>
+              <p>
+                The app proposes the month column, the sales column and the external factors, such as price
+                or promotion, then reports problems with the file in plain words. Each model is tested on
+                months that were held back from it. The results put the best model first, with a chart of
+                history, back-test and forecast, and a table comparing all four on MAE, RMSE, MAPE and R².
+                A what-if lets you change the future values of the factors, for example price up 5 percent,
+                and compare the result with the baseline.
+              </p>
+            </div>
+            <div>
+              <h2>What runs it</h2>
+              <p>
+                The forecasting is done by open-source projects: Pyodide, scikit-learn, statsmodels, XGBoost,
+                pandas and NumPy. They are downloaded once, about 50 MB, and every file is checked against a
+                published checksum. There is no server and no account, and nothing you import or produce is
+                sent anywhere. After the first visit the app works with the network off.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <noscript>This app fits forecasting models in your browser, so it needs JavaScript turned on.</noscript>
     <script type="module" src="/src/main.tsx"></script>

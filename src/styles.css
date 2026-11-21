@@ -1191,3 +1191,170 @@ dialog .row {
     transition: none !important;
   }
 }
+
+/* ------------------------------------------------------------ before the app starts */
+/* The page written in index.html: the pitch on the rail colour, a forecast drawing itself beside it. */
+
+.pre {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+}
+.pre-pitch {
+  background: var(--rail);
+  color: var(--rail-ink);
+  padding: clamp(1.5rem, 5vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.pre-kicker {
+  font: 600 0.78rem/1 var(--body);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--glow);
+}
+.pre-pitch h1 {
+  font-size: clamp(2rem, 4.2vw, 3.1rem);
+  max-width: 12ch;
+}
+.pre-pitch p:not([class]) {
+  max-width: 46ch;
+  color: #c6dad6;
+  font-size: 1.05rem;
+}
+.pre-wait {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  color: var(--rail-muted);
+  font-size: 0.95rem;
+}
+.pre-detail {
+  padding: clamp(1.5rem, 5vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.8rem;
+  max-width: 50rem;
+}
+.pre-chart {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.1rem 0.9rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.8rem;
+}
+.pre-chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.pre-grid {
+  stroke: var(--line);
+  stroke-width: 1;
+}
+.pre-now {
+  stroke: var(--muted);
+  stroke-width: 1;
+  stroke-dasharray: 3 4;
+}
+.pre-axis {
+  fill: var(--muted);
+  font: 600 11px var(--body);
+}
+.pre-band {
+  fill: var(--primary);
+  opacity: 0.08;
+}
+.pre-hist,
+.pre-fc {
+  fill: none;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.pre-hist {
+  stroke: var(--ink);
+  stroke-width: 2.4;
+}
+.pre-fc {
+  stroke-width: 2;
+  /* Longer than any of the four lines, so the dash covers a whole line. The lines are whole
+     unless the animation is running, so nothing is lost where motion is turned off. */
+  stroke-dasharray: 400;
+  animation: pre-draw 1.3s ease-out 0.15s backwards;
+}
+.pre-fc.xgboost {
+  stroke: var(--m-xgboost);
+}
+.pre-fc.sarimax {
+  stroke: var(--m-sarimax);
+  animation-delay: 0.3s;
+}
+.pre-fc.elasticnet {
+  stroke: var(--m-elasticnet);
+  animation-delay: 0.45s;
+}
+.pre-fc.holtwinters {
+  stroke: var(--m-holtwinters);
+  animation-delay: 0.6s;
+}
+@keyframes pre-draw {
+  from {
+    stroke-dashoffset: 400;
+  }
+}
+.pre-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.3rem;
+  font-size: 0.87rem;
+  font-weight: 600;
+}
+.pre-legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.pre-legend li::before {
+  content: '';
+  width: 1.1rem;
+  height: 3px;
+  border-radius: 2px;
+}
+.pre-legend .xgboost::before {
+  background: var(--m-xgboost);
+}
+.pre-legend .sarimax::before {
+  background: var(--m-sarimax);
+}
+.pre-legend .elasticnet::before {
+  background: var(--m-elasticnet);
+}
+.pre-legend .holtwinters::before {
+  background: var(--m-holtwinters);
+}
+.pre-cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.6rem;
+}
+.pre-cols h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+.pre-cols p {
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+@media (max-width: 900px) {
+  .pre {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .pre-cols {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
